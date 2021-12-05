@@ -1,0 +1,82 @@
+:root {
+    --color-1: #5ec576;
+    --color-2: #ffcb03;
+    --color-3: #ff585f;
+    --color-1-darker: #4bbb7d;
+    --color-2-darker: #ffbb00;
+    --color-3-darker: #fd424b;
+    --color-1-opacity: #5ec5763a;
+    --color-2-opacity: #ffcd0331;
+    --color-3-opacity: #ff58602d;
+    --gradient-1: linear-gradient(to top left, #39b385, #9be15d);
+    --gradient-2: linear-gradient(to top left, #ffb003, #ffcb03);
+    --gradient-3: linear-gradient(to top left, #e52a5a, #ff585f);
+
+    --color-white:            #ffffff;
+    --color-offwhite:         #f3f3f3;
+    --color-offwhiteblue:     #f0f0ff;
+    --color-offwhitecyan:     #efffff;
+    --color-offwhitecyanblue: #edf3ff;
+    --color-offoffwhite:      #eaf0f8;
+
+    --color-black:            #010101; /*cause black makes pixels dissappear often, so almost black makes pixel shine a bit !However using bg color or material black is just fine*/
+    --color-blackish:         #121212;
+    --color-offblack:         #333333;
+    --color-blueblack:        #202945;
+/*
+    00dp	0%
+    01dp	5%
+    02dp	7%
+    03dp	8%
+    04dp	9%
+    06dp	11%
+    08dp	12%
+    12dp	14%
+    16dp	15%
+    24dp	16%
+*/
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 9%), 0 2px 10px 0 rgb(0 0 0 / 8%);
+
+    --red1:    #DF4B84;
+    --red2:    #E4699A;
+    --red3:    #eb92b6;
+    --red4:    #f2bcd3;
+
+    --violet1: #7951ac;
+    --violet2: #906FBA;
+    --violet3: #AF98CD;
+    --violet4: #cec1e1;
+
+    --blue1:   #6099d9;
+    --blue2:   #76abdf;
+    --blue3:   #99c2e9;
+    --blue4:   #bfd9f2;
+
+    --green1:  #5BB882;
+    --green2:  #78C597;
+    --green3:  #9fd5b4;
+    --green4:  #c4e5d1;
+
+    --yellow1: #dfbc37;
+    --yellow2: #e3c955;
+    --yellow3: #ead784;
+    --yellow4: #f2e6b3;
+
+    --blue11:  #4da8f7;
+    --blue12:  #6bb8f8;
+    --blue13:  #94ccfb;
+    --blue13:  #bde0fc;
+
+    --blue21:  #46a5f2;
+    --blue22:  #66b4f4;
+    --blue23:  #91c9f7;
+    --blue23:  #bbdefa;
+
+    --comp1:   #aa896b; /*to blue1 */
+    --comp2:   #c8a991;
+
+    --textImp: #ffffffde;
+    --textMid1:#ffffff99;
+    --textMid2:#ffffff80;
+    --textDis: #ffffff60;
+}

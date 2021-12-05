@@ -1,0 +1,174 @@
+:root {
+    --primaryFull: #4da8f7ff;
+    --primaryMain: #4da8f7de;
+    --primaryMid1: #4da8f799;
+    --primaryMid2: #4da8f780;
+    --primaryDis:  #4da8f760;
+    --primaryOut:  #4da8f730;
+
+    --secondaryFull: #AF98CDff;
+    --secondaryMain: #AF98CDde;
+    --secondaryMid1: #AF98CD99;
+    --secondaryMid2: #AF98CD80;
+    --secondaryDis:  #AF98CD60;
+    --secondaryOut:  #AF98CD30;
+}
+
+body {
+    background: #1D273D;
+    text-align: center;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--primaryMain);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+    color: var(--secondaryMain);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    color: var(--primaryMid1);
+    font-size: 1rem;
+    font-weight: bolder;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h3.status {
+    color: var(--primaryMid2);
+    font-weight: 100;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h3.off {
+    color: var(--primaryDis);
+}
+
+h3.off:hover {
+    color: var(--primaryDis);
+}
+
+h6 {
+    font-size: 0.9rem;
+    font-weight: 100;
+    color:var(--primaryMain);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.topper {
+    margin: auto;
+    padding: 5px;
+}
+
+.main {
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    max-width: 90%;
+    width: 600px;
+    box-sizing: border-box;
+    background-color: hsla(0, 100%, 100%, 0.05);
+	box-shadow:
+		/* offset-x | offset-y | blur-radius | spread-radius | color */
+		0px 1px 1px 0px hsla(0,0%,0%,0.14),
+		0px 2px 1px -1px hsla(0,0%,0%,0.12),
+		0px 1px 3px 0px hsla(0,0%,0%,0.2);
+}
+
+.top {
+    max-height: 8%;
+}
+
+.mid {
+    max-height: 60%;
+}
+
+.bot {
+    max-height: 10%;
+}
+
+.fot {
+    max-height: 8%;
+}
+
+.sudoku {
+    display: inline-block;
+}
+
+.big-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 160px);
+    grid-template-rows: repeat(3, 160px);
+    gap: 15px;
+}
+
+.small-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+    gap: 5px;
+}
+
+.cell {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--secondaryMid1);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: hsla(0, 100%, 100%, 0.09);
+    box-shadow:
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
+        0px 4px 5px 0px hsla(0,0%,0%,0.14),
+        0px 1px 10px 0px hsla(0,0%,0%,0.12),
+        0px 2px 4px -1px hsla(0,0%,0%,0.2);
+}
+
+.empty {
+    font-size: 2.5rem;
+    font-weight: lighter;
+    color: var(--primaryMid1);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: hsla(0, 100%, 100%, 0.09);
+    box-shadow:
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
+        0px 4px 5px 0px hsla(0,0%,0%,0.14),
+        0px 1px 10px 0px hsla(0,0%,0%,0.12),
+        0px 2px 4px -1px hsla(0,0%,0%,0.2);
+}
+
+.empty:hover {
+	background-color: hsla(0, 100%, 100%, 0.16);
+	box-shadow:
+		/* offset-x | offset-y | blur-radius | spread-radius | color */
+		0px 24px 38px 3px hsla(0,0%,0%,0.14),
+		0px 9px 46px 8px hsla(0,0%,0%,0.12),
+		0px 11px 15px -7px hsla(0,0%,0%,0.2);
+}
+
+.activated {
+	background-color: hsla(0, 100%, 100%, 0.12);
+	box-shadow:
+		/* offset-x | offset-y | blur-radius | spread-radius | color */
+		0px 8px 10px 1px hsla(0,0%,0%,0.14),
+		0px 3px 14px 2px hsla(0,0%,0%,0.12),
+		0px 5px 5px -3px hsla(0,0%,0%,0.2);
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+@media (max-width: 1024px) {
+
+}

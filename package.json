@@ -1,0 +1,17 @@
+{
+  "name": "sudoku",
+  "version": "0.3.0",
+  "description": "Sudoku",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hetacz/sudoku.git"
+  },
+  "keywords": [
+    "Sudoku",
+    "Portfolio",
+    "rafallovesworking"
+  ],
+  "author": "Hetacz",
+  "license": "ISC"
+}
