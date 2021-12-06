@@ -13,3 +13,7 @@
 - How do we evaluate win?
 - How do we show, how many solutions are available for given position?
 - How do we show that starting board is insufficient to make one solution?
+
+## Unsolved sudokus taken from
+
+[morcefaster](https://gist.github.com/morcefaster/)

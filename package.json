@@ -1,8 +1,9 @@
 {
   "name": "sudoku",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Sudoku",
   "main": "index.html",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/hetacz/sudoku.git"
