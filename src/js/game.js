@@ -1,6 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-
 class Game {
 
     #numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -217,4 +214,4 @@ class Game {
     }
 }
 
-const game = new Game();
+export default new Game();

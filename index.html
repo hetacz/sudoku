@@ -8,10 +8,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="src/css/style.css">
+        <link rel="stylesheet" href="src/css/spinner.scss">
         <link rel="apple-touch-icon" sizes="180x180" href="src/media/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="src/media/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="src/media/favicon/favicon-16x16.png">
-        <script type="module" defer src="src/js/load.js"></script>
+        <script type="module" defer src="src/js/control.js"></script>
     </head>
 
     <body>
@@ -19,134 +20,24 @@
         <div class="main top">
             <h1>Sudoku</h1>
         </div>
-        <div class="main mid">
-            <div class="sudoku">
-                <div class="big-grid">
-                    <div class="small-grid">
-                        <div data-id="a0" class="cell">1</div>
-                        <div data-id="a1" class="cell">2</div>
-                        <div data-id="a2" class="cell">3</div>
-                        <div data-id="b0" class="cell">4</div>
-                        <div data-id="b1" class="cell">5</div>
-                        <div data-id="b2" class="cell">6</div>
-                        <div data-id="c0" class="cell">7</div>
-                        <div data-id="c1" class="cell">8</div>
-                        <div data-id="c2" class="cell">9</div>
-                    </div>
-
-                    <div class="small-grid">
-                        <div data-id="a3" class="cell">1</div>
-                        <div data-id="a4" class="cell">2</div>
-                        <div data-id="a5" class="cell">3</div>
-                        <div data-id="b3" class="cell">4</div>
-                        <div data-id="b4" class="cell">5</div>
-                        <div data-id="b5" class="cell">6</div>
-                        <div data-id="c3" class="cell">7</div>
-                        <div data-id="c4" class="cell">8</div>
-                        <div data-id="c5" class="cell">9</div>
-                    </div>
-
-                    <div class="small-grid">
-                        <div data-id="a6" class="cell">1</div>
-                        <div data-id="a7" class="cell">2</div>
-                        <div data-id="a8" class="cell">3</div>
-                        <div data-id="b6" class="cell">4</div>
-                        <div data-id="b7" class="cell">5</div>
-                        <div data-id="b8" class="cell">6</div>
-                        <div data-id="c6" class="cell">7</div>
-                        <div data-id="c7" class="cell">8</div>
-                        <div data-id="c8" class="cell">9</div>
-                    </div>
-
-                    <div class="small-grid">
-                        <div data-id="d0" class="cell">1</div>
-                        <div data-id="d1" class="cell">2</div>
-                        <div data-id="d2" class="cell">3</div>
-                        <div data-id="e0" class="cell">4</div>
-                        <div data-id="e1" class="cell">5</div>
-                        <div data-id="e2" class="cell">6</div>
-                        <div data-id="f0" class="cell">7</div>
-                        <div data-id="f1" class="cell">8</div>
-                        <div data-id="f2" class="cell">9</div>
-                    </div>
-
-                    <div class="small-grid">
-                        <div data-id="d3" class="cell">1</div>
-                        <div data-id="d4" class="cell">2</div>
-                        <div data-id="d5" class="cell">3</div>
-                        <div data-id="e3" class="cell">4</div>
-                        <div data-id="e4" class="cell">5</div>
-                        <div data-id="e5" class="cell">6</div>
-                        <div data-id="f3" class="cell">7</div>
-                        <div data-id="f4" class="cell">8</div>
-                        <div data-id="f5" class="cell">9</div>
-                    </div>
-
-                    <div class="small-grid">
-                        <div data-id="d6" class="cell">1</div>
-                        <div data-id="d7" class="cell">2</div>
-                        <div data-id="d8" class="cell">3</div>
-                        <div data-id="e6" class="cell">4</div>
-                        <div data-id="e7" class="cell">5</div>
-                        <div data-id="e8" class="cell">6</div>
-                        <div data-id="f6" class="cell">7</div>
-                        <div data-id="f7" class="cell">8</div>
-                        <div data-id="f8" class="cell">9</div>
-                    </div>
-
-                    <div class="small-grid">
-                        <div data-id="g0" class="cell">1</div>
-                        <div data-id="g1" class="cell">2</div>
-                        <div data-id="g2" class="cell">3</div>
-                        <div data-id="h0" class="cell">4</div>
-                        <div data-id="h1" class="cell">5</div>
-                        <div data-id="h2" class="cell">6</div>
-                        <div data-id="i0" class="cell">7</div>
-                        <div data-id="i1" class="cell">8</div>
-                        <div data-id="i2" class="cell">9</div>
-                    </div>
-
-                    <div class="small-grid">
-                        <div data-id="g3" class="cell">1</div>
-                        <div data-id="g4" class="cell">2</div>
-                        <div data-id="g5" class="cell">3</div>
-                        <div data-id="h3" class="cell">4</div>
-                        <div data-id="h4" class="cell">5</div>
-                        <div data-id="h5" class="cell">6</div>
-                        <div data-id="i3" class="cell">7</div>
-                        <div data-id="i4" class="cell">8</div>
-                        <div data-id="i5" class="cell">9</div>
-                    </div>
-
-                    <div class="small-grid">
-                        <div data-id="g6" class="cell">1</div>
-                        <div data-id="g7" class="cell">2</div>
-                        <div data-id="g8" class="cell">3</div>
-                        <div data-id="h6" class="cell">4</div>
-                        <div data-id="h7" class="cell">5</div>
-                        <div data-id="h8" class="cell">6</div>
-                        <div data-id="i6" class="cell">7</div>
-                        <div data-id="i7" class="cell">8</div>
-                        <div data-id="i8" class="cell">9</div>
-                    </div>
-                </div>
-            </div>
+        <div id="main" class="main mid">
+            <script type="module" defer scr="src/js/emptyBoard.js"></script>
         </div>
         <div class="main bot">
             <div class="menu">
                 <div>
-                    <h3 class="off">Action</h3>
+                    <h2 id="load-btn" class="action">Load...</h2>
                 </div>
                 <div>
-                    <h3 class="off">Action</h3>
+                    <h2 id="solve-btn" class="">Solve</h2>
                 </div>
                 <div>
-                    <h3 class="off">Action</h3>
+                    <h2 id="reset-btn" class="">Reset</h2>
                 </div>
             </div>
         </div>
-        <div class="main bot">
-            <h3 class="status">Status...</h3>
+        <div id="status" class="main bot">
+            <h3>Load sudoku from database</h3>
         </div>
         <div class="main fot">
             <h6>Rafał Michalski</h6>
