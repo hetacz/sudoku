@@ -4,30 +4,13 @@ import * as el from './selectors.js';
 
 class Renderer {
 
-    constructor() {
-        this.#renderInitialView();
-    }
+    onLoad = 'Sudoku loaded.';
+    onSolve = 'Sudoku solved.';
+    onReset = 'Sudoku resetted';
 
     addInitialHandlers(getSudokus) {
         el.loadBtn.addEventListener('click', getSudokus);
-        return this;
-    }
-
-    #renderInitialView() {
-        let html = `<div class="sudoku">`;
-        html += `<div class="big-grid">`;
-        for (let r = 0; r < 9; r++) {
-            html += `<div class="small-grid">`;
-            for (let c = 0; c < 9; c++) {
-                html += `<div class="empty"></div>`;
-            }
-            html += `</div>`;
-        }
-        html += `</div>`;
-        html += `</div>`;
-
-        el.main.innerHTML = '';
-        el.main.insertAdjacentHTML('afterbegin', html);
+        el.loadBtn.classList.add('action');
         return this;
     }
 
@@ -43,22 +26,44 @@ class Renderer {
         }
         html += `</div>`;
         html += `</div>`;
-        this.clearElement(el.main);
-        this.renderInElement(el.main, html);
-        this.setStatusText('Sudoku loaded successfully :)');
+        this
+            .clearElement(el.main)
+            .renderInElement(el.main, html);
         return this;
     }
 
-    /*renderSpinner() {
-        const markup = `
-            <div class="spinner">
-                <svg>
-                    <use href="src/img/icons.svg#icon-loader"></use>
-                </svg>
-            </div>`;
-        //$el.innerHTML = '';
-        //$el.insertAdjacentHTML('afterbegin', markup);
-    }*/
+    solveSudoku(sudoku) { // unique method to save different formatting
+        const bigGrid = document.querySelector('.big-grid');
+        for (let r = 0; r < 9; r++) {
+            for (let c = 0; c < 9; c++) {
+                bigGrid.children.item(r).children.item(c).textContent = sudoku[r][c];
+            }
+        }
+        return this;
+    }
+    addResetHandler(listener) {
+        el.resetBtn.addEventListener('click', listener);
+        el.resetBtn.classList.add('action');
+        return this;
+    }
+
+    addSolveHandler(listener) {
+        el.solveBtn.addEventListener('click', listener);
+        el.solveBtn.classList.add('action');
+        return this;
+    }
+
+    removeResetHandler(listener) {
+        el.resetBtn.removeEventListener('click', listener);
+        el.resetBtn.classList.remove('action');
+        return this;
+    }
+
+    removeSolveHandler(listener) {
+        el.solveBtn.removeEventListener('click', listener);
+        el.solveBtn.classList.remove('action');
+        return this;
+    }
 
     setStatusText(text) {
         el.status.textContent = text;
@@ -74,6 +79,17 @@ class Renderer {
         element.insertAdjacentHTML('afterbegin', html);
         return this;
     }
+
+    /*renderSpinner() {
+        const markup = `
+            <div class="spinner">
+                <svg>
+                    <use href="src/img/icons.svg#icon-loader"></use>
+                </svg>
+            </div>`;
+        //$el.innerHTML = '';
+        //$el.insertAdjacentHTML('afterbegin', markup);
+    }*/
 }
 
 export default new Renderer();
