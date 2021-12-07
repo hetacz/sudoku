@@ -9,23 +9,28 @@ class Controler {
     #currentSudoku = Array.from({ length: 9 }, () => {
         return Array.from({ length: 9 }, () => 0);
     });
+    #solved = false;
 
     constructor() {
         render
-            .addInitialHandlers(this.#loadSmallSudoku.bind(this))
+            .addInitialHandlers(
+                this.#loadSmallSudoku.bind(this),
+                this.#solveSudoku.bind(this),
+            )
             .renderSudoku(this.#currentSudoku);
     }
 
     async #loadSmallSudoku() {
         try {
-            const json = await load.getSudokus('raw');
-            const sudoku = json.raw[Math.floor(Math.random() * json.raw.length)];
+            const json = await load.getSudokus('raw.json');
+            const sudoku = game.copyBoard(json.raw[Math.floor(Math.random() * json.raw.length)]);
             this.#currentSudoku = game.copyBoard(sudoku);
             game.board = game.copyBoard(sudoku);
             render
                 .renderSudoku(sudoku)
-                .addSolveHandler(this.#solveSudoku.bind(this))
-                .setStatusText(render.onLoad);
+                .setStatusText(render.onLoad)
+                .addSolveHandler(this.#solveSudoku.bind(this));
+            this.#solved = false;
         } catch (error) {
             console.error(error);
         }
@@ -33,21 +38,11 @@ class Controler {
     }
 
     #solveSudoku() {
+        if (this.#solved) { return; }
         render
             .solveSudoku(game.solve(game.board))
-            .addResetHandler(this.#resetSudoku.bind(this))
-            .removeSolveHandler(this.#solveSudoku)
             .setStatusText(render.onSolve);
-        return this;
-    }
-
-    #resetSudoku() {
-        game.board = game.copyBoard(this.#currentSudoku);
-        render
-            .renderSudoku(this.#currentSudoku)
-            .removeResetHandler(this.#resetSudoku)
-            .addSolveHandler(this.#solveSudoku.bind(this))
-            .setStatusText(render.onReset);
+        this.#solved = true;
         return this;
     }
 }
