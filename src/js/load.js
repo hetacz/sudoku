@@ -3,7 +3,7 @@ class Loader {
 
     async #loadSudokuDatabase(filename) {
         try {
-            const response = await fetch(`/data/${filename}.json`);
+            const response = await fetch(`/data/${filename}`);
             if (!response.ok) { throw new Error(`Error loading data, ${response.status}`); }
             return await response.json();
         } catch (err) {
@@ -34,8 +34,3 @@ class Loader {
 }
 
 export default new Loader();
-// const sudokus = await loader.getSudokus('raw');
-// console.log(sudokus);
-// console.log(sudokus.raw[0]);
-
-// console.log(sudokus.then((sudo) => console.log(sudo.raw[0])));
