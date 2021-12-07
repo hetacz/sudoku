@@ -1,6 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-
 class Game {
 
     #numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -17,7 +14,7 @@ class Game {
         [6, 6, 6, 7, 7, 7, 8, 8, 8],
     ];
 
-    #copyBoard(board) {
+    copyBoard(board) {
         return JSON.parse(JSON.stringify(board));
     }
 
@@ -92,6 +89,7 @@ class Game {
             }
             console.log('|-------|-------|-------|');
         }
+        return this;
     }
 
     solve(board) {
@@ -101,12 +99,12 @@ class Game {
         while (modified && !solved) {
             const result = this.#constrain(board);
             modified = result.modified;
-            board = this.#copyBoard(result.board);
+            board = this.copyBoard(result.board);
             solved = this.checkForWin(board);
         }
         // TODO other algorithms could fit in here before backtracking
         if (!solved) {
-            board = this.#copyBoard(this.#backtrack(board));
+            board = this.copyBoard(this.#backtrack(board));
             solved = this.checkForWin(board);
         }
         return board;
@@ -137,12 +135,12 @@ class Game {
         }
         return {
             modified: modified,
-            board: this.#copyBoard(board),
+            board: this.copyBoard(board),
         };
     }
 
     #backtrack(board) {
-        let backupBoard = this.#copyBoard(board);
+        let backupBoard = this.copyBoard(board);
         for (const r of this.#indexes) {
             for (const c of this.#indexes) {
                 if (backupBoard[r][c] === 0) {
@@ -151,9 +149,9 @@ class Game {
                     const candidates = backupBoard[r][c];
                     if (Array.isArray(candidates)) {
                         for (const candidate of candidates) {
-                            const backupBoard2 = this.#copyBoard(backupBoard);
+                            const backupBoard2 = this.copyBoard(backupBoard);
                             backupBoard2[r][c] = candidate;
-                            const filledBoard = this.#copyBoard(this.#backtrack(backupBoard2));
+                            const filledBoard = this.copyBoard(this.#backtrack(backupBoard2));
                             if (filledBoard) { return filledBoard; }
                         }
                         return false; // we shouldn't be here...
@@ -217,4 +215,4 @@ class Game {
     }
 }
 
-const game = new Game();
+export default new Game();

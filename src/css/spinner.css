@@ -1,0 +1,10 @@
+div.spinner {
+    margin: 5rem auto;
+    text-align: center;
+}
+
+svg.spinner {
+    height: 6rem;
+    width: 6rem;
+    animation: rotate 2s infinite linear;
+}
