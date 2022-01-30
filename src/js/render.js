@@ -1,5 +1,3 @@
-'use strict';
-
 import * as el from './selectors.js';
 
 class Renderer {

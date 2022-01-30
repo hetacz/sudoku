@@ -1,5 +1,3 @@
-'use strict';
-
 import game from './game.js';
 import load from './load.js';
 import render from './render.js';
